@@ -1,3 +1,7 @@
+html {
+  font-family: "Helvetica Neue", Helvetica;
+}
+
 .App {
   text-align: center;
   justify-content: center;
@@ -48,14 +52,15 @@ input[type="text"] {
   border-width: 1px;
   border-color: #99b9cf;
   border-style: solid;
-  height: 60px;
+  padding: 1px;
+  height: 70px;
   margin: 2px;
 }
 
 .stats-cell-spells-div {
   display: block;
   float: left;
-  margin: 4px 0 2px 4px;
+  margin: 10px 0 0 1px;
 }
 
 .stats-cell-spell {
@@ -69,7 +74,7 @@ input[type="text"] {
 .stats-cell-runes-div {
   display: block;
   float: left;
-  margin: 4px 0 2px 4px;
+  margin: 8px 0 0 1px;
 }
 
 .stats-cell-rune {
@@ -81,7 +86,7 @@ input[type="text"] {
 }
 
 .stats-cell-champ {
-  margin: 6px 0 2px 12px;
+  margin: 10px 2px;
   float: left;
   border-width: 1px;
   border-radius: 25px;
@@ -91,4 +96,79 @@ input[type="text"] {
 .stats-view {
   display: block;
   padding: 60px;
+}
+
+.match-info {
+  display: block;
+  text-align: center;
+  padding: 2px;
+  font-size: 12px;
+  float: left;
+  width: 15%;
+  height: 100%;
+}
+
+.bar {
+  margin: 2px auto;
+  display: block;
+  width: 50%;
+  height: 2%;
+  background-color: #99b9cf;
+}
+
+.KDA {
+  display: table-cell;
+  font-weight: bold;
+  float: left;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.KDARatio {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.MultiKill {
+  display: block;
+  font-size: 10px;
+  margin-top: 8px;
+  background-color: #ee5a52;
+  border: 1px solid #c6443e;
+  border-radius: 15px;
+}
+
+.Stats {
+  display: table-cell;
+  color: #555e5e;
+  width: 90px;
+  font-size: 10px;
+  height: 70px;
+  vertical-align: middle;
+}
+
+.kill-rate {
+  color: #c6443e;
+}
+
+.items {
+  display: table-cell;
+  height: 70px;
+  vertical-align: middle;
+}
+
+.item {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  margin-top: 2px;
+  margin-right: 2px;
+  overflow: hidden;
+}
+
+.item-list {
+  width: 96px;
+  margin: 0 auto;
 }
