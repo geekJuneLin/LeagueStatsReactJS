@@ -1,21 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import Item from "./Item";
+import ItemData from "../ItemData";
 
-function Items() {
-  return (
-    <div className="items">
-      <div className="item-list">
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3068.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3075.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3111.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3091.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/1037.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3052.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/2052.png?image=q_auto,w_22&v=1578479159" />
-        <Item imageUrl="https://opgg-static.akamaized.net/images/lol/item/3340.png?image=q_auto,w_22&v=1578479159" />
+class Items extends Component {
+  state = {
+    data: ItemData
+  };
+  render() {
+    const items = this.state.data.map(item => (
+      <Item key={item.id} imageUrl={item.imagUrl} />
+    ));
+    return (
+      <div className="items">
+        <div className="item-list">{items}</div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Items;

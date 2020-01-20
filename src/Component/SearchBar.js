@@ -1,24 +1,50 @@
-import React from "react";
+import React, { Component } from "react";
 
-function SearchBar() {
-  return (
-    <div style={{ backgroundColor: "#5383e8" }}>
-      <h1 style={{ margin: 0, paddingTop: 12 }}>LeagueStats</h1>
-      <form className="search-form">
-        <input type="text" className="search-bar" placeholder="Summoner name" />
-        <button type="button" className="search-btn" onClick={handleClick}>
-          Search
-        </button>
-        <button type="button" className="server">
-          OCE
-        </button>
-      </form>
-    </div>
-  );
-}
+class SearchBar extends Component {
+  state = {
+    name: ""
+  };
 
-function handleClick() {
-  console.log("Search btn clicked!");
+  handleNameInputChange = e => {
+    this.setState({ name: e.target.value });
+  };
+
+  handleSearch = () => {
+    if (this.state.name.length > 1) {
+      this.props.onSearch(this.state.name);
+      this.setState({ name: "" });
+    } else {
+      alert("Please enter the name of the summoner first!");
+    }
+  };
+
+  render() {
+    return (
+      <div style={{ backgroundColor: "#5383e8" }}>
+        <h1 style={{ margin: 0, paddingTop: 12 }}>LeagueStats</h1>
+        <form className="search-form">
+          <input
+            id="name"
+            type="text"
+            className="search-bar"
+            placeholder="Summoner name"
+            value={this.state.name}
+            onChange={this.handleNameInputChange}
+          />
+          <button
+            type="button"
+            className="search-btn"
+            onClick={this.handleSearch}
+          >
+            Search
+          </button>
+          <button type="button" className="server">
+            OCE
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default SearchBar;

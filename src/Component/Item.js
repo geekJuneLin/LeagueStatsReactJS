@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Item(props) {
-  return (
-    <div className="item">
-      <img src={props.imageUrl} />
-    </div>
-  );
+class Item extends Component {
+  state = {
+    imageUrl: this.props.imageUrl
+  };
+  render() {
+    return (
+      <div className="item">
+        <img src={this.state.imageUrl} />
+      </div>
+    );
+  }
 }
 
 export default Item;
