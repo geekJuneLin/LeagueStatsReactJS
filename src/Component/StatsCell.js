@@ -19,7 +19,7 @@ class StatsCell extends Component {
         this.props.gameId +
         "?api_key=" +
         this.API_KEY;
-      await fetch(url)
+      await fetch(this.PROXY_URL + url)
         .then(res => {
           if (res.status !== 200) {
             throw new Error("Status code: " + res.status);
@@ -43,7 +43,12 @@ class StatsCell extends Component {
     console.log(this.props.gameId);
     return (
       <div className="stats-cell">
-        <MatchInfo />
+        <MatchInfo
+          gameMode={this.state.match.gameMode}
+          duration={this.state.match.gameDuration}
+          win="Victory"
+          date="20 hours ago"
+        />
         <ChampInfo />
         <KDA />
         <Stats />

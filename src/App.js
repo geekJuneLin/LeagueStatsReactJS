@@ -53,8 +53,6 @@ class App extends Component {
         this.API_KEY;
       await fetch(this.PROXY_URL + url)
         .then(res => {
-          res.header("Access-Control-Allow-Origin", "*");
-          res.header("Access-Control-Allow-Headers", "X-Requested-With");
           if (res.status !== 200) {
             throw new Error("The status code is not 200!");
           } else {
