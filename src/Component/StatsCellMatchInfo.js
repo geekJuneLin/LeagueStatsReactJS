@@ -10,6 +10,7 @@ class StatsCellMatchInfo extends Component {
     }
   };
   render() {
+    console.log(this.props.gameMode);
     return (
       <div className="match-info">
         <div style={{ fontWeight: "bold" }}>
